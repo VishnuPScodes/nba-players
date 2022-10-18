@@ -33,11 +33,11 @@ getData(url)
     let single=document.getElementById('main')
   for(let i=0;i<data.data.length;i++){
     let single1=document.createElement('div');
-    let team1=document.createElement('h2');
+    let team1=document.createElement('div');
     team1.innerHTML=data.data[i].home_team.full_name;
    
     //team 2
-    let team2=document.createElement('h2');
+    let team2=document.createElement('div');
     team2.innerHTML=data.data[i].visitor_team.full_name;
     single1.append(team1,team2)
    
