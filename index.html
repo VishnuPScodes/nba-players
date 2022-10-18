@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./players.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <div class="main">
+        
+       </div>
+    </div>
+</body>
+</html>
+<script>
+    fetch('balldontlie.io/api/v1/players')
+	.then(response => response.json())
+	.then(data => console.log(data))
+	.catch(err => console.error(err));
+</script>
