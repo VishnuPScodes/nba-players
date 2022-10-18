@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-       <div class="main">
+       <div id="main">
         
        </div>
     </div>
@@ -34,9 +34,9 @@ getData(url)
   .then((data)=>{
     console.log('data reccievded',data)
     let single=document.getElementById('main')
-  for(let i=0;i<data.message.length;i++){
-    let single1=document.createElement('img');
-    single1.src=`${data?.message[i]}`
+  for(let i=0;i<data.data.length;i++){
+    let single1=document.createElement('div');
+    single1.innerHTML=data.data.first_name
     single.append(single1)
   }
  
