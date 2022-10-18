@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+      
+    </div>
+</body>
+</html>
+<script>
+       let data=fetch(`https://www.balldontlie.io/api/v1/players`);
+    console.log('data',data);
+    //huy
+    const url = `https://www.balldontlie.io/api/v1/players`
+    const getData = (url) =>
+  new Promise((resolve, reject) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(json => resolve(json))
+      .catch(error => reject(error))
+  })
+
+
+let imagesare=[];
+getData(url)
+  .then((data)=>{
+    console.log('data reccievded',data)
+    let single=document.getElementById('main')
+  for(let i=0;i<data.data.length;i++){
+    let single1=document.createElement('div');
+    let team1=document.createElement('h2');
+    team1.innerHTML=data.data[i].home_team.full_name;
+    single1.append(team1)
+    //team 2
+    let team2=document.createElement('h2');
+    team2.innerHTML=data.data[i].visitor_team.full_name;
+    single1.append(team2)
+   
+    single.append(single1)
+  }
+ 
+  
+  })
+
+  .catch(error => console.log(error.message))
+
+   
+</script>
