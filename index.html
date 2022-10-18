@@ -16,12 +16,34 @@
 </body>
 </html>
 <script>
-    async function fetchReq(){
-        await  fetch('balldontlie.io/api/v1/players')
-	.then(response => response.json())
-	.then(data => console.log(data))
-	.catch(err => console.error(err));
-    }
-    fetchReq()
+     let data=fetch(`https://www.balldontlie.io/api/v1/players`);
+    console.log('data',data);
+    //huy
+    const url = `https://www.balldontlie.io/api/v1/players`
+    const getData = (url) =>
+  new Promise((resolve, reject) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(json => resolve(json))
+      .catch(error => reject(error))
+  })
+
+
+let imagesare=[];
+getData(url)
+  .then((data)=>{
+    console.log('data reccievded',data)
+    let single=document.getElementById('main')
+  for(let i=0;i<data.message.length;i++){
+    let single1=document.createElement('img');
+    single1.src=`${data?.message[i]}`
+    single.append(single1)
+  }
+ 
+  
+  })
+
+  .catch(error => console.log(error.message))
+
    
 </script>
