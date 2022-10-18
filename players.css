@@ -4,3 +4,11 @@
     display: flex;
     flex-wrap: wrap;
 }
+#main>div{
+    border: 3px solid magenta;
+    height: 300px;
+    width: 450px;
+    font-weight: 700;
+    text-align: center;
+    margin: 50px;
+}
