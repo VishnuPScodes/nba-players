@@ -13,3 +13,8 @@
     margin: 50px;
     padding-top: 50px;
 }
+#main>div:hover{
+    cursor: pointer;
+    color: blueviolet;
+    transform: scale(1.2);
+}
