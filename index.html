@@ -38,7 +38,10 @@ getData(url)
     let single1=document.createElement('div');
     let fullname=data.data[i].first_name+' '+data.data[i].last_name
     single1.innerHTML=fullname
-    single.append(single1)
+    let pos=document.createElement('h2');
+    let position='Position'+':'+' '+data.data[i].position
+    pos.innerHTML=position
+    single.append(single1,pos)
   }
  
   
