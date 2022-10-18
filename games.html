@@ -48,9 +48,22 @@ getData(url)
     let team2=document.createElement('div');
     team2.innerHTML=data.data[i].visitor_team.full_name;
     team2.style.fontSize='50px'
+    //winner
+    let homeScore=data.data[i].home_team_score;
+    let vscore=data.data[i].visitor_team_score;
+    let winner='a tie'
+    if(homeScore>vscore){
+      winner=`won by ${data.data[i].home_team.city}`
+    }
+    else{
+        winner=`won by ${data.data[i].visitor_team.city}`
+    }
+    let won=document.createElement('i');
+    won.style.color='red'
+    won.textContent='The match was '+' '+winner
      //line
     let hr=document.createElement('hr')
-    single1.append(team1,vs,team2,hr)
+    single1.append(team1,vs,team2,won,hr)
    
    
     single.append(single1)
