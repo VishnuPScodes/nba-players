@@ -36,7 +36,7 @@ getData(url)
     let single=document.getElementById('main')
   for(let i=0;i<data.data.length;i++){
     let single1=document.createElement('div');
-    single1.innerHTML=data.data[i].first_name
+    single1.innerHTML=data.data[i].first_name,data.data[i].last_name
     single.append(single1)
   }
  
