@@ -36,6 +36,8 @@ getData(url)
     let team1=document.createElement('div');
     team1.innerHTML=data.data[i].home_team.full_name;
     team1.style.fontSize='50px'
+    team1.style.marginTop='100px'
+
     //vs
     let vs=document.createElement('div');
     vs.style.color='red'
@@ -46,7 +48,10 @@ getData(url)
     let team2=document.createElement('div');
     team2.innerHTML=data.data[i].visitor_team.full_name;
     team2.style.fontSize='50px'
-    single1.append(team1,vs,team2)
+     //line
+    let hr=document.createElement('hr')
+    single1.append(team1,vs,team2,hr)
+   
    
     single.append(single1)
   }
