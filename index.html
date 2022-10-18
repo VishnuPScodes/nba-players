@@ -38,10 +38,17 @@ getData(url)
     let single1=document.createElement('div');
     let fullname=data.data[i].first_name+' '+data.data[i].last_name
     single1.innerHTML=fullname
-    let pos=document.createElement('h2');
+    let pos=document.createElement('div');
     let position='Position'+':'+' '+data.data[i].position
     pos.innerHTML=position
-    single1.append(pos)
+    let btn=document.createElement('button');
+    btn.style.padding='10px';
+    btn.style.color='orange';
+    btn.style.fontWeight='600px';
+    btn.style.textAlign='centre'
+    btn.innerHTML='Players Details'
+    single1.append(pos,btn)
+   
     single.append(single1)
   }
  
